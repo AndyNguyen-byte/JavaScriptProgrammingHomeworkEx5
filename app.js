@@ -50,5 +50,37 @@ function submitEmployee() {
     !isValidLength('Last Name', lastName.value, 3) &&
     !isValidPayRate(payRate.value);
 
-  console.log(isValid);
+    if (isValid) {
+        let table = $('#employeesTable');
+        let tr = document.createElement('tr');
+    
+        let td = document.createElement('td');
+        td.appendChild(document.createTextNode(firstName.value));
+        tr.appendChild(td);
+    
+        td = document.createElement('td');
+        td.appendChild(document.createTextNode(txtLastName.value));
+        tr.appendChild(td);
+    
+        td = document.createElement('td');
+        td.appendChild(
+            document.createTextNode(parseFloat(payRate.value).toFixed(2))
+          );
+        tr.appendChild(td);
+
+        table.appendChild(tr);
+
+        firstName.value='';
+        lastName.value='';
+        payRate.value='';
+
+      } else{
+          let li;
+          errors.forEach(err=> {
+              //errorsList.innerHTML += `<li>${err}</li>`;
+              li=document.createElement('li');
+              li.textContent=err;
+              errorsList.appendChild(li);
+          });
+      }
 }
