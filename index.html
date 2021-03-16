@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Employee Generator</title>
+    <script src="app.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        border: 1px solid #69899f;
+      }
+      table td {
+        border: 1px solid #000000;
+        padding: 5px;
+      }
+      table td:first-child {
+        border-left: 0px solid #000000;
+      }
+      table th {
+        border: 2px solid #69899f;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      First Name: <input type="text" id="firstNameInput" /> Last Name:
+      <input type="text" id="lastNameInput" /> Hourly Rate:
+      <input type="text" id="rateInput" />
+      <button id="submitEmployee">Create</button>
+    </div>
+    <ul style="color: red" id="errorsList"></ul>
+    <table id="employeesTable">
+      <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Pay Rate</td>
+      </tr>
+    </table>
+  </body>
+</html>
